@@ -13,7 +13,13 @@ class StringManipulations {
      * @param  {String} subStr  substring to be matched
      * @return {String}
      */
-    findFirstMatch(subStr) {}
+    findFirstMatch(subStr) {
+        if (this.string.indexOf(subStr) < 0) {
+            return '';
+        }
+
+        return subStr;
+    }
 
 
     /**
@@ -21,7 +27,13 @@ class StringManipulations {
      * @param  {String} subStr  substring to be matched
      * @return {String}
      */
-    findLastMatch(subStr) {}
+    findLastMatch(subStr) {
+        if (this.string.lastIndexOf(subStr) < 0) {
+            return '';
+        }
+
+        return subStr;
+    }
 
     /**
      * Returns the fsubstring between two given other strings
@@ -29,7 +41,19 @@ class StringManipulations {
      * @param  {String} subStr2  ending of the match
      * @return {String}
      */
-    substringBetweenMatches(subStr1, subStr2) {}
+    substringBetweenMatches(subStr1, subStr2) {
+        const firstIndex = this.string.indexOf(subStr1);
+        if (firstIndex < 0) {
+            return '';
+        }
+
+        const lastIndex = this.string.indexOf(subStr2, firstIndex + subStr1.length);
+        if (lastIndex < 0) {
+            return '';
+        }
+
+        return this.string.substring(firstIndex + subStr1.length, lastIndex);
+    }
 
     /**
     Given the string attribute of the class, 
@@ -40,7 +64,13 @@ class StringManipulations {
     * @return {String}
     */
     both_ends() {
+        const stringLength = this.string.length;
 
+        if (stringLength < 2) {
+            return '';
+        }
+
+        return this.string.substring(0, 2) + this.string.substring(stringLength - 2);
     }
 
     /**
@@ -52,6 +82,12 @@ class StringManipulations {
     * @param  {String} str1  
     * @return {String}
     */
-    fix_start(str1) {}
+    fix_start(str1) {
+        return this.string.replace(str1, (match) => {
+            return '*'.repeat(match.length);
+        })
+    }
 
 }
+
+module.exports = StringManipulations;
