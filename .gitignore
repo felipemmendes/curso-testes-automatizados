@@ -1,4 +1,4 @@
-/node_modules
+**/node_modules
 /coverage
 /jest-stare
 .DS_Store
