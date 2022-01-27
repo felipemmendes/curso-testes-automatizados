@@ -27,7 +27,7 @@ jobs:
             node-version: 16.x
             cache: npm
         - name: Cypress run
-            uses: cypress-io/github-actions@v2
-            with:
-              working-directory: ./Aula 4/atividade 3/entrega
-              start: npm run start
+          uses: cypress-io/github-actions@v2
+          with:
+            working-directory: ./Aula 4/atividade 3/entrega
+            start: npm run start
