@@ -16,9 +16,10 @@ jobs:
   test:
     runs-on: ubuntu-lastest
     steps:
-          uses: actions/checkout@v2
-        - name: Cypress run
-          uses: cypress-io/github-actions@v2
-          with:
-            working-directory: ./Aula 4/atividade 3/entrega
-            start: npm run start
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-actions@v2
+        with:
+          working-directory: ./Aula 4/atividade 3/entrega
+          start: npm run start
