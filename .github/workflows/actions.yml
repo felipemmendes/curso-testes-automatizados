@@ -28,5 +28,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2.3.6
         with:
-          working-directory: ./Aula 4/atividade 3/entrega
+          working-directory: ./Aula 4/atividade3/entrega
           start: npm run start
