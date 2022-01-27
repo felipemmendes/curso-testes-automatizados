@@ -8,6 +8,7 @@ on:
     branches:
       - main
       - releases/*
+      - atividade-3
     paths-ignore:
       - '**.md'
 
@@ -18,17 +19,15 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Setup node 16
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
           cache: npm
-      - working-directory: ./Aula 5/server
-        run: npm install
-      - working-directory: ./Aula 5/server
-        run: npm run test
-      - working-directory: ./Aula 5/client
-        run: npm install
-      - working-directory: ./Aula 5/client
-        run: npm run test
+      - name: Cypress run
+        working-directory: ./Aula 4/atividade 3/entrega
+        uses: cypress-io/github-actions@v2
+        with:
+          start: npm run start
