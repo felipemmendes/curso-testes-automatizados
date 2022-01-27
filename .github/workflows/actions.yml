@@ -14,7 +14,10 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-lastest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
