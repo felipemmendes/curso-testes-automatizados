@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/flaviajanine/curso-testes-automatizados#readme",
   "devDependencies": {
-    "jest": "^27.4.7"
+    "jest": "^27.4.7",
+    "cypress": "^9.2.1"
   },
   "dependencies": {
     "jest-stare": "^2.3.0"
